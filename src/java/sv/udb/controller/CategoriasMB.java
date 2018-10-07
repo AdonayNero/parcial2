@@ -61,6 +61,6 @@ public class CategoriasMB {
         return categoriasFacade.findAll();
     }
     
-    
+    //pras
     
 }
