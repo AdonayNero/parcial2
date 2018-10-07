@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:b="http://bootsfaces.net/ui"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+    template="./WEB-INF/menu.xhtml">
+    <ui:define name="contenido">
+
+        <b:panel  >
+
+            <f:facet name="heading">
+                <i class="fa fa-bell" style="padding-right:20px" />
+                <h:outputText value="Registro de Nueva Usuario" />
+                <b:badge style="margin-left:10px; background-color:#5cb85c" value="good"  />
+            </f:facet>
+
+            <b:row>
+                <b:column >
+
+                    <b:form>
+
+
+
+                        <b:datepicker id="cdate3" mode="toggle-icon" showWeek="true"
+                                      firstDay="1" value="#{consumosMB.consumos.fechaHora}" required="true"
+                                      label="Fecha:"  />
+                        <b:selectOneMenu value="#{consumosMB.consumos.idalimento.idalimento}" label="Alimento">
+                            <f:selectItems value="#{consumosMB.alimentosList}" var="c" itemLabel="#{c.nombre}" itemValue="#{c.idalimento}" />
+                        </b:selectOneMenu>
+
+
+                        <b:commandButton look="success" action="#{consumosMB.insert()}" value="Ingresar" />
+                    </b:form>
+                    <br></br>
+                    <b:panel style="width: 90%; margin:0 auto;">
+                        <b:dataTable value="#{consumosMB.consumoList}" var="co" excel="true"
+                                     csv="true"
+                                     pdf="true"
+                                     columnVisibility="true"
+                                     copy="true"
+                                     print="true"
+                                     >
+                            <b:dataTableColumn value="#{co.idconsumo}" />
+                            <b:dataTableColumn  >
+                                <h:outputText value="#{co.fechaHora}" >
+                                    <f:convertDateTime pattern="dd/MM/yyyy" />
+                                </h:outputText>
+                            </b:dataTableColumn>
+                            <b:dataTableColumn value="#{co.idalimento.nombre}" />
+
+
+
+
+                            <b:column>
+                                mas opcines
+                            </b:column>
+                        </b:dataTable>
+                    </b:panel>
+
+
+
+
+                </b:column>
+
+            </b:row>
+        </b:panel>
+
+
+
+
+
+
+
+
+
+    </ui:define>
+</ui:composition>

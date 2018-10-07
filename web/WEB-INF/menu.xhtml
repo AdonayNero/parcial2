@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Cuponerav2</title>
+         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css'/>
+
+             <link rel="stylesheet" href="./css/style.css"></link>
+    </h:head>
+    <h:body>
+        <ui:insert name="menu">
+            <b:navBar brand="Cuponerav2" brandHref="pruebas.xhtml" fluid="true">
+  <b:navbarLinks>
+    <b:dropMenu value="Empresa" iconAwesome="building" iconAlign="right">
+        <b:navLink value="Ingresar" href="NuevaEmpresa.xhtml"></b:navLink>
+          <b:navLink value="Ver Empresas" href="#"></b:navLink>
+          <b:navLink value="otras" href="#"></b:navLink>   
+      </b:dropMenu>
+    <b:dropMenu value="Usuarios" iconAwesome="users" iconAlign="right">
+        <b:navLink value="Ingresar" href="NuevoUser.xhtml"></b:navLink>
+          <b:navLink value="Ver Usuarios" href="#"></b:navLink>
+          <b:navLink value="otras" href="#"></b:navLink>   
+      </b:dropMenu>
+    <b:dropMenu value="Cupones" iconAwesome="gift" iconAlign="right">
+      <b:navLink value="Nuevo" href="#"></b:navLink>
+      <b:navLink value="Ver" href="#"></b:navLink>
+      <b:navLink value="Editar" href="#"></b:navLink>
+      <b:navLink></b:navLink>
+      <b:navLink header="mas opciones"></b:navLink>
+     
+     
+    </b:dropMenu>
+  </b:navbarLinks>
+
+  
+  <!-- Following line is needed for TBS 3.0.1 (panel content overflow issue) -->
+
+  <b:navbarLinks pull="right" styleClass="hidden-xs">
+    
+    <b:dropMenu value="Perfil" iconAwesome="user-circle" >
+      <b:navLink value="Action" href="#"></b:navLink>
+      <b:navLink value="Another action" href="#"></b:navLink>
+      <b:navLink value="Something else here" href="#"></b:navLink>
+      <b:navLink></b:navLink>
+      <b:navLink header="Nav header"></b:navLink>
+      <b:navLink value="Separated link" href="#"></b:navLink>
+      <b:navLink value="One more separated link" href="#"></b:navLink>
+    </b:dropMenu>
+  </b:navbarLinks>
+</b:navBar>
+        </ui:insert>
+
+        <div class="container">	
+    
+            <div class="row">
+        
+                <div class="col-md-9 col-sm-9" >
+                    <ui:insert name="contenido" >
+                        CONTENIDO POR DEFECTO
+                    </ui:insert>
+                </div>    
+
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js'></script>
+
+  
+    <script  src="./js/index.js"></script>
+    </h:body>
+</html>
+
